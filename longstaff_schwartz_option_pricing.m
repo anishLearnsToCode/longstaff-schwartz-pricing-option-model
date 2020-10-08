@@ -53,8 +53,9 @@ title('Risk Free Rate (3-Month Euribor Continuously-Compounded)')
 
 returns = tick2ret(prices,'Method','continuous');        % convert prices to returns
 returns = returns - mean(returns);  % center the returns
-index   = 2;                                       % Germany stored in column 3
+index   = 2;                                       % France stored in column 2
 
+figure;
 plot(dates(2:end), returns(:,index))
 xlabel('Date')
 ylabel('Return')
@@ -78,6 +79,7 @@ pLowerTail = linspace(minProbability  , tailFraction    , 200); % lower tail
 pUpperTail = linspace(1 - tailFraction, maxProbability  , 200); % upper tail
 pInterior  = linspace(tailFraction    , 1 - tailFraction, 200); % interior
 
+figure;
 plot(icdf(tails{index}, pLowerTail), pLowerTail, 'red'  , 'LineWidth', 2)
 hold on
 grid on
