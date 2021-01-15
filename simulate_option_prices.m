@@ -103,7 +103,7 @@ r        = mean(yields);             % historical 3M Euribor average
 X        = repmat(100, nIndices, 1); % initial state vector
 strike   = sum(X);                   % initialize an at-the-money basket
 
-nTrials  = 10000;                      % # of independent trials
+nTrials  = 10;                      % # of independent trials
 nPeriods = 63;   % # of simulation periods: 63/252 = 0.25 years = 3 months
 
 % sub 
